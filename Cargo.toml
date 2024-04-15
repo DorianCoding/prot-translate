@@ -1,8 +1,8 @@
 [package]
-name = "protein-translate"
-version = "0.2.0"
-authors = ["dweb0"]
-documentation = "https://docs.rs/protein-translate/"
+name = "prot-translate"
+version = "0.1.0"
+authors = ["dweb0", "DorianCoding"]
+documentation = "https://docs.rs/prot-translate/"
 description = "Translate nucleotide sequence to protein."
 homepage = "https://github.com/dweb0/protein-translate"
 repository = "https://github.com/dweb0/protein-translate"
@@ -12,9 +12,6 @@ categories = ["algorithms", "science"]
 license = "MIT/Apache-2.0"
 edition = "2018"
 exclude = ["/.travis.yml", "/benches/*", "/tests/*"]
-
-[badges]
-travis-ci = { repository = "dweb0/protein-translate" }
 
 
 [dependencies]

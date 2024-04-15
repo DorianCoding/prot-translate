@@ -1,4 +1,4 @@
-# protein-translate
+# prot-translate
 
 [![Build Status](https://travis-ci.com/dweb0/protein-translate.svg?token=EQz1tk6xqYMBC8vjUmyv&branch=master)](https://travis-ci.com/dweb0/protein-translate)
 [![Cargo](https://img.shields.io/crates/v/protein-translate.svg)](https://crates.io/crates/protein-translate)
@@ -12,38 +12,41 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-protein-translate = "0.2.0"
+prot-translate = "0.1.0"
 ```
 
 ## Example
 
 ```rust
-use protein_translate::translate;
+use prot_translate::*;
 
 fn main() {
     let dna = b"GTGAGTCGTTGAGTCTGATTGCGTATC";
     let protein = translate(dna);
     assert_eq!("VSR*V*LRI", &protein);
-
+    let dna = b"GCTAGTCGTATCGTAGCTAGTC";
+     let peptide = translate3(dna,None);
+     assert_eq!(&peptide, "AlaSerArgIleValAlaSer");
     // To shift reading frame
     let protein_frame2 = translate(&dna[1..]);
     assert_eq!("*VVESDCV", &protein_frame2);
-
+    let dna = b"GCTAGTCGTATCGTAGCTAGTC";
+     let peptide = translate_full(dna,None);
+     assert_eq!(&peptide, "AlanineSerineArginineIsoleucineValineAlanineSerine");
 }
 ```
-
 ## Benchmarks
 
 The current algorithm is inspired by [seqan's](https://github.com/seqan/seqan/blob/master/include/seqan/translation/translation_tables.h) implementation which uses array indexing. Here is how it performs vs other methods (tested on 2012 macbook pro).
 
 | Method | 10 bp* | 100 bp | 1,000 bp | 10,000 bp | 100,000 bp | 1 million bp |
 | ------ | ---- | ----- | ------- | -------- | --------- | ------- |
-| protein_translate | **91 ns** | **0.29 μs** | **2.28 μs** | **23 μs** | **215 μs** | **2.25 ms** |
+| prot-translate | **91 ns** | **0.29 μs** | **2.28 μs** | **23 μs** | **215 μs** | **2.25 ms** |
 | fnv hashmap | 111 ns | 0.37 μs | 3.58 μs | 37 μs | 366 us | 3.86 ms |
 | std hashmap | 160 ns | 1.03 μs | 9.65 μs | 100 μs | 943 μs | 9.40 ms |
 | phf_map | 177 ns | 1.04 μs | 9.47 μs | 100 μs | 936 μs | 9.91 |
 | match statement | 259 ns | 1.77 μs | 17.9 μs | 163 μs | 1941 μs | 19.1 ms |
-| protein_translate (unchecked) | 90 ns | 0.26 μs | 2.02 μs | 20 μs | 197 μs | 1.92 ms |
+| prot-translate (unchecked) | 90 ns | 0.26 μs | 2.02 μs | 20 μs | 197 μs | 1.92 ms |
 
 > *bp = "base pairs"  
 
