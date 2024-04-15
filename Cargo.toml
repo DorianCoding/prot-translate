@@ -24,5 +24,5 @@ csv = "1.1"
 fnv = "1.0.3"
 
 [[bench]]
-name = "bench"
+name = "benches/bench.rs"
 harness = false
