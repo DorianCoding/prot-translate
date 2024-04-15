@@ -1,4 +1,4 @@
-use prot-translate::translate;
+use prot_translate::translate;
 
 #[test]
 fn validate() {

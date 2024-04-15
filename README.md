@@ -1,4 +1,4 @@
-# prot-translate
+# prot_translate
 
 [![Build Status](https://travis-ci.com/dweb0/protein-translate.svg?token=EQz1tk6xqYMBC8vjUmyv&branch=master)](https://travis-ci.com/dweb0/protein-translate)
 [![Cargo](https://img.shields.io/crates/v/protein-translate.svg)](https://crates.io/crates/protein-translate)
@@ -12,7 +12,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-prot-translate = "0.1.0"
+prot_translate = "0.1.0"
 ```
 
 ## Example
@@ -41,12 +41,12 @@ The current algorithm is inspired by [seqan's](https://github.com/seqan/seqan/bl
 
 | Method | 10 bp* | 100 bp | 1,000 bp | 10,000 bp | 100,000 bp | 1 million bp |
 | ------ | ---- | ----- | ------- | -------- | --------- | ------- |
-| prot-translate | **91 ns** | **0.29 μs** | **2.28 μs** | **23 μs** | **215 μs** | **2.25 ms** |
+| prot_translate | **91 ns** | **0.29 μs** | **2.28 μs** | **23 μs** | **215 μs** | **2.25 ms** |
 | fnv hashmap | 111 ns | 0.37 μs | 3.58 μs | 37 μs | 366 us | 3.86 ms |
 | std hashmap | 160 ns | 1.03 μs | 9.65 μs | 100 μs | 943 μs | 9.40 ms |
 | phf_map | 177 ns | 1.04 μs | 9.47 μs | 100 μs | 936 μs | 9.91 |
 | match statement | 259 ns | 1.77 μs | 17.9 μs | 163 μs | 1941 μs | 19.1 ms |
-| prot-translate (unchecked) | 90 ns | 0.26 μs | 2.02 μs | 20 μs | 197 μs | 1.92 ms |
+| prot_translate (unchecked) | 90 ns | 0.26 μs | 2.02 μs | 20 μs | 197 μs | 1.92 ms |
 
 > *bp = "base pairs"  
 

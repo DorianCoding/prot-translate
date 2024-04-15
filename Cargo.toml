@@ -1,11 +1,11 @@
 [package]
-name = "prot-translate"
+name = "prot_translate"
 version = "0.1.0"
 authors = ["dweb0", "DorianCoding"]
-documentation = "https://docs.rs/prot-translate/"
+documentation = "https://docs.rs/prot_translate/"
 description = "Translate nucleotide sequence to protein."
-homepage = "https://github.com/dweb0/protein-translate"
-repository = "https://github.com/dweb0/protein-translate"
+homepage = "https://github.com/DorianCoding/prot_translate"
+repository = "https://github.com/DorianCoding/prot_translate"
 readme = "README.md"
 keywords = ["bioinformatics", "translate", "dna", "rna", "protein"]
 categories = ["algorithms", "science"]

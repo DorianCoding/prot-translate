@@ -421,7 +421,7 @@ static TEST_SEQ: &'static [u8] = include_bytes!("test_seq.txt");
 fn bench_checked(c: &mut Criterion) {
 
     c.bench_function("current implementation", |b| {
-        b.iter(|| prot-translate::translate(black_box(TEST_SEQ),None))
+        b.iter(|| prot_translate::translate(black_box(TEST_SEQ),None))
     });
 }
 

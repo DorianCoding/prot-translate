@@ -16,7 +16,7 @@ You can find the rest of the table
 /// # Examples
 ///
 /// ```
-/// use prot-translate::translate;
+/// use prot_translate::translate;
 ///
 /// # fn main() { dna_example(); rna_example(); shift_reading_frame(); }
 /// fn dna_example() {
@@ -77,7 +77,7 @@ pub fn translate(seq: &[u8], delimiter: Option<char>) -> String {
 /// # Examples
 ///
 /// ```
-/// use prot-translate::translate3;
+/// use prot_translate::translate3;
 ///
 /// # fn main() { dna_example(); rna_example(); shift_reading_frame(); }
 /// fn dna_example() {
@@ -138,7 +138,7 @@ pub fn translate3(seq: &[u8], delimiter: Option<char>) -> String {
 /// # Examples
 ///
 /// ```
-/// use prot-translate::translate_full;
+/// use prot_translate::translate_full;
 ///
 /// # fn main() { dna_example(); rna_example(); shift_reading_frame(); }
 /// fn dna_example() {
